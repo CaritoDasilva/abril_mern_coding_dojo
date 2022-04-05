@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    height: 100vh;
+}
+
+.left-container, .right-container {
+    height: 100%;
+    min-height: 100%;
+}
+
+.left-container {
+    background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-container img {
+    width: 360px;
+    height: auto;
+}
+
+.right-container {
+    width: 45%;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+}
+
+.logo-container img {
+    width: 43px;
+    height: auto;
+}
+
+.title-container h1 {
+    color: #E7E9EA;
+    font-size: 64px;
+    font-weight: 800;
+    width: 70%;
+}
+
+.title-container {
+    margin: 48px 0;
+}
+
+.subtitle-container h3 {
+    color: #E7E9EA;
+    font-size: 31px;
+    font-weight: 600;
+}
+
+.subtitle-container {
+    margin-bottom: 32px
+}
+
+.btns-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns-container button img {
+    width: 20px;
+}
+
+.btns-container button {
+    width: 300px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    letter-spacing: 0.25px;
+    outline: none;
+    overflow: hidden;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-divisor {
+    display: flex;
+    width: 300px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn-divisor span {
+    width: 50%;
+    height:44%;
+    border-top: 1pt solid #dadce0;
+}
+
+.btn-divisor p {
+    color: #dadce0;
+    margin: 0 1%;
+}
+
+.login-phoneNumber.login-phoneNumber {
+    background-color: #1A8CD8;
+    color: #fff;
+    border: none;
+}
+
+.btns-container .termsAndConditions {
+    color: #dadce0;
+    width: 300px;
+}
+
+.btns-container .termsAndConditions, a {
+    font-size: 11px;
+    
+}
+
+a {
+    color: #1A8CD8;
+
+}
+
+.login-btn-container {
+    margin-top: 40px;
+}
+
+h4 {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.login-btn-container .login-btn {
+    background-color: transparent;
+    border: 1pt solid #dadce0;
+    color: #1A8CD8;
+}

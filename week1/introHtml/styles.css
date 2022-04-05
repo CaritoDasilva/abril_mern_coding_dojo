@@ -1,0 +1,16 @@
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#title {
+    color: blueviolet;
+}
+
+/* Código DRY */
+
+/* DONT */
+/* REPEAT */
+/* YOURSELF */
