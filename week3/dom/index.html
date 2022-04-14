@@ -5,19 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <script src="index.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div id="root">
+    <div id="root" class="container">
         <!-- este contenido es dinámico -->
-        <h1 onmouseover="onHover()" onmouseout="hoverLeft()">Pasa el mouse sobre mi</h1>
-        <form action="" onsubmit="event.preventDefault(); greet()">
-            <textarea type="text" placeholder="Ingresa tu nombre" id="username"></textarea>
-            <button type="submit">Click me</button>
-        </form>
-        <div id="message"></div>
+        <!-- <h1 onmouseover="onHover()" onmouseout="hoverLeft()">Pasa el mouse sobre mi</h1> -->
+        <div class="row justify-content-end">
+            <div class="col-2">
+                <img src="https://cdn.dribbble.com/users/844597/screenshots/9008058/media/a8bfc3cd2e71a304a02d8729bcffa132.png?compress=1&resize=400x300"
+                    alt="Foto de perfil" onmouseover="onHoverInPic(this)" onmouseout="hoverLeftInPic(this)">
+            </div>
+
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="form-container col-6">
+                <form action="" onsubmit="event.preventDefault(); post(event)">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">¿Qué estás pensando hoy?</label>
+                        <textarea type="text" placeholder="Ingresa tu comentario" id="inputMessage" class="form-control"
+                            rows="5" onkeyup="post(event)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Click me</button>
+                </form>
+
+            </div>
+
+        </div>
+        <div id="messageArea"></div>
     </div>
 
 </body>
