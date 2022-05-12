@@ -1,0 +1,40 @@
+.form-container {
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+        0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 3%;
+
+    button {
+        height: 50px;
+        width: 150px;
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    ul {
+        list-style-type: none;
+        font-size: 14px;
+
+        li {
+            margin: 2% auto;
+            width: 70%;
+            background-color: #FFAEBC;
+            border-radius: 9px;
+            padding: 2%;
+
+            .comment-container {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+
+                img {
+                    width: 25px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+}

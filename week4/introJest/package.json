@@ -1,0 +1,19 @@
+{
+  "name": "intro-jest",
+  "version": "1.0.0",
+  "description": "Repositorio demostrativo de cómo implementar jest",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "jest",
+    "unit",
+    "test"
+  ],
+  "author": "CaritoDasilva",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

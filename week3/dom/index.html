@@ -32,7 +32,7 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">¿Qué estás pensando hoy?</label>
                         <textarea type="text" placeholder="Ingresa tu comentario" id="inputMessage" class="form-control"
-                            rows="5" onkeyup="post(event)"></textarea>
+                            rows="5" onkeydown="post(event, this)"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Click me</button>
                 </form>

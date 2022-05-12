@@ -26,20 +26,29 @@ function hoverLeftInPic(element) {
     element.src = 'https://cdn.dribbble.com/users/844597/screenshots/9008058/media/a8bfc3cd2e71a304a02d8729bcffa132.png?compress=1&resize=400x300';
 } 
 
-function post(event) {
-    if (event?.keyCode === 13 || event.type === 'submit') {
+function post(event, element) {
+    console.log("🚀 ~ file: index.js ~ line 30 ~ post ~ event", element)
+    if (event?.keyCode === 13 && element?.value !== '' || event.type === 'submit') {
         const messageArea = document.getElementById('messageArea');
         const inputMessage  = document.getElementById('inputMessage');
-        const rowPost = document.createElement('div');
-        const postDiv = document.createElement('div');
-        const textPost = document.createElement('p');
-        const textNodePost = document.createTextNode(inputMessage.value);
-        textPost.appendChild(textNodePost);
-        postDiv.appendChild(textPost);
-        rowPost.appendChild(postDiv);
-        messageArea.prepend(rowPost);
-        rowPost.classList.add('row', 'justify-content-md-center');
-        postDiv.classList.add('col-8', 'post-card');
+        if(inputMessage.value === '') {
+            inputMessage.value = '';
+        } else {
+            console.log("🚀 ~ file: index.js ~ line 34 ~ post ~ inputMessage.value", inputMessage.value)
+            const rowPost = document.createElement('div');
+            const postDiv = document.createElement('div');
+            const textPost = document.createElement('p');
+            const textNodePost = document.createTextNode(inputMessage.value);
+            textPost.appendChild(textNodePost);
+            postDiv.appendChild(textPost);
+            rowPost.appendChild(postDiv);
+            messageArea.prepend(rowPost);
+            rowPost.classList.add('row', 'justify-content-md-center');
+            postDiv.classList.add('col-8', 'post-card');
+            inputMessage.value = '';
+
+        }
+    } else {
         inputMessage.value = '';
-    };
+    }
 };
