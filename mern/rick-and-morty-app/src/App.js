@@ -7,6 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './views/Home';
+import CharacterDetail from './views/CharacterDetail';
 
 function App() {
   const [user, setUser] = useState({
@@ -24,6 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Register setUser={setUser} />}/>
           <Route path="/home" element={<Home />} />
+          <Route path='/character/:id' element={<CharacterDetail/>}/>
+
 
         </Routes>
       </BrowserRouter>
