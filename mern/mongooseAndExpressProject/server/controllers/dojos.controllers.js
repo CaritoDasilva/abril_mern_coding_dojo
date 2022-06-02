@@ -20,3 +20,8 @@ module.exports.addInstructorsToDojo = (req, res) => {
         .then(dojo => res.json({ dojo }))
         .catch(err => res.status(404).json({ error: err, msg: 'Ups no hemos podido traerte las sucursales' }))
 }
+module.exports.getStudents = ( req, res) => {
+    Dojo.aggregate([{$group:{_id:null,sumaestudiantes:{$sum:"$qtyStudents"}}}])
+        .then(sumStudents => res.json({sumStudents})) 
+        .catch(err => res.status(500).json({ error: err, msg: 'Ups no se encontraron estudiantes'}))
+}
