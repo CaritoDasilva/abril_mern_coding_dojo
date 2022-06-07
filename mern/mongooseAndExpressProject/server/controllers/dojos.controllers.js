@@ -7,7 +7,8 @@ module.exports.getAllDojos = (req, res) => {
 };
 
 module.exports.createDojo = (req, res) => {
-    Dojo.create(req.body)
+    console.log("🚀 ~ file: dojos.controllers.js ~ line 11 ~ req.body", req.body.dojo)
+    Dojo.create(req.body.dojo)
         .then(newDojo => res.json({ newDojo }))
         .catch(err => res.status(500).json({ error: err, msg: 'Ups no hemos podido traerte las sucursales' }));
 }
