@@ -3,8 +3,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Formik, Form as FormikForm, Field } from 'formik';
 import * as Yup from 'yup';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 import { createDojo } from "../services/dojosService";
+
+const MySwal = withReactContent(Swal)
 
 const FormCreationDojo = () => {
 
@@ -31,6 +35,11 @@ const FormCreationDojo = () => {
         try {
             // e.preventDefault();
             await createDojo(values)
+            await MySwal.fire({
+                title: <strong>Se ha creado Dojo de manera exitosa </strong>,
+               
+                icon: 'success'
+              })
 
         } catch(err) {
             console.log("🚀 ~ file: formCreationDojo.js ~ line 19 ~ handlerSubmit ~ err", err.response.data);
