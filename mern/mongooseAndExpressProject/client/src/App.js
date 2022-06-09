@@ -5,6 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import FormCreationDojo from './views/FormCreationDojo';
+import FormAddInstructors from './views/FormAddInstructors';
+import Home from './views/Home';
+import Detail from './views/Detail';
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/crear-dojo' element={<FormCreationDojo />} />
+        <Route path='/agregar-instructores' element={<FormAddInstructors/>}/>
+        <Route path='/dojos' element={<Home/>}/>
+        <Route path='/dojos/:id' element={<Detail/>}/>
       </Routes>
       </BrowserRouter>
       

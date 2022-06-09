@@ -14,6 +14,8 @@ module.exports.createDojo = (req, res) => {
 }
 
 module.exports.addInstructorsToDojo = (req, res) => {
+    console.log("🚀 ~ file: dojos.controllers.js ~ line 19 ~ req.params.id", req.params.id)
+    
     Dojo.findByIdAndUpdate(req.params.id, {
         $push: { instructors: { $each: req.body.instructors } }
         }, 
@@ -25,4 +27,10 @@ module.exports.getStudents = ( req, res) => {
     Dojo.aggregate([{$group:{_id:null,sumaestudiantes:{$sum:"$qtyStudents"}}}])
         .then(sumStudents => res.json({sumStudents})) 
         .catch(err => res.status(500).json({ error: err, msg: 'Ups no se encontraron estudiantes'}))
+}
+
+module.exports.getDojo = (req, res) => {
+    Dojo.findById(req.params.id)
+        .then(dojo => res.json({ dojo }))
+        .catch(err => res.status(404).json({ error: err, msg: 'Ups no hemos podido traerte la sucursal' }));
 }
