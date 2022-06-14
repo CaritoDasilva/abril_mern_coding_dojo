@@ -34,3 +34,16 @@ module.exports.getDojo = (req, res) => {
         .then(dojo => res.json({ dojo }))
         .catch(err => res.status(404).json({ error: err, msg: 'Ups no hemos podido traerte la sucursal' }));
 }
+
+module.exports.updateDojo = (req, res) => {
+    Dojo.findByIdAndUpdate(req.params.id, req.body.dojo, { new: true })
+        .then(updatedDojo => res.json({ updatedDojo }))
+        .catch(err => res.status(500).json({ msg: 'Ups no hemos podido actualizar el Dojo', error: err }))
+}
+
+module.exports.deleteDojo = (req, res) => {
+    Dojo.deleteOne({ _id: req.params.id })
+        .then(deleteConfirmation => res.json({ deleteConfirmation }))
+        .catch(err => res.status(500).json({ msg: 'Ups no hemos podido borrar el Dojo', error: err }));
+}
+

@@ -15,6 +15,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/crear-dojo' element={<FormCreationDojo />} />
+        <Route path='/editar-dojo/:id' element={<FormCreationDojo />} />
         <Route path='/agregar-instructores' element={<FormAddInstructors/>}/>
         <Route path='/dojos' element={<Home/>}/>
         <Route path='/dojos/:id' element={<Detail/>}/>

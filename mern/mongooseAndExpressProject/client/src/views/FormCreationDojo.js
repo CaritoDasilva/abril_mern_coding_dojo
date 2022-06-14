@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Formik, Form as FormikForm, Field } from 'formik';
+import { Formik, Form as FormikForm } from 'formik';
 import * as Yup from 'yup';
 
-import { createDojo } from "../services/dojosService";
+import { createDojo, getDojo, updateDojo } from "../services/dojosService";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FormCreationDojo = () => {
+    
+    const { id } = useParams();
+    
+    const navigate = useNavigate();
 
-    const [dojo] = useState({
+    const [dojo, setDojo] = useState({
         name: '',
         address: ''
     })
@@ -30,7 +35,9 @@ const FormCreationDojo = () => {
     const handlerSubmit = async (values) => {
         try {
             // e.preventDefault();
-            await createDojo(values)
+            id ? await updateDojo(id, values) : await createDojo(values);
+            //Todo: Mostrar un modal de éxito
+            navigate('/dojos', { replace: true });
 
         } catch(err) {
             console.log("🚀 ~ file: formCreationDojo.js ~ line 19 ~ handlerSubmit ~ err", err.response.data);
@@ -40,6 +47,22 @@ const FormCreationDojo = () => {
             })
         }
     }
+
+    // Refactorizar función para que no esté duplicada en 2 componentes
+    const getDojoFromService = async () => {
+        try {
+            const dojoToUpdate = await getDojo(id);
+            console.log("🚀 ~ file: formCreationDojo.js ~ line 50 ~ getDojoFromService ~ dojoToUpdate", dojoToUpdate)
+            setDojo(dojoToUpdate.data.dojo);
+
+        } catch(err) {
+            //Todo: Mostrar error en el front
+        }
+    }
+
+    useEffect(() => {
+        id && getDojoFromService();
+    }, [])
 
     return (
         <div className="form-container">
