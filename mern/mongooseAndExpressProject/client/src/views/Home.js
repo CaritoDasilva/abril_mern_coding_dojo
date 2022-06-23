@@ -2,11 +2,13 @@ import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DojoComponent from "../components/Dojo";
+import Switch from "../components/Switch";
 import { deleteDojo, getDojos } from "../services/dojosService";
 
 const Home = () => {
 
     const [dojos, setDojos] = useState([]);
+    const [checked, setChecked] = useState()
     const navigate = useNavigate();
 
     const getDojosFromService = async () => {
@@ -42,6 +44,12 @@ const Home = () => {
     return(
         <div>
             <h1>Sucursales</h1>
+            <Switch/>
+            {/* <Switch
+                nativeControlId='my-switch'
+                checked={checked}
+                onChange={(e) => setChecked(e.target.checked)} />
+            <label htmlFor='my-switch'>My Switch</label> */}
             {
                 dojos.length > 0 && dojos.map(dojo => (
                     <DojoComponent dojo={dojo} key={dojo._id} onclick={() => goToDetailPage(dojo._id)} deleteDojoFromService={deleteDojoFromService} />

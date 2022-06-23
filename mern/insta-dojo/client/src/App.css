@@ -1,5 +1,4 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
-@import "@material/react-switch/dist/switch.css";
 
 .App {
   text-align: center;
@@ -42,30 +41,30 @@
 
 .form-container {
   padding: 5%;
+  display: flex;
+}
+
+.form-container div {
+  width: 50%;
 }
 
 form {
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.errors-message {
-  color: rgb(255, 0, 85);
+table {
+  width: 80% !important;
+  margin: 3% auto;
+
 }
 
-.cardDojo {
-  width: 30%;
-  border-radius: 9px;
-  margin: 2% auto;
-  padding: 9px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  background-color: #189AB4;
-  cursor: pointer;
+table img {
+  width: 50px;
 }
 
-.cardDojo:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+table button {
+  margin-left: 2%;
 }
-
-
